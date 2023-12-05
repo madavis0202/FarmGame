@@ -1,10 +1,10 @@
 xspeed = 0;
 yspeed = 0;
 
-right_key = false;
-left_key = false;
-up_key = false;
-down_key = false;
+d_key = false;
+a_key = false;
+w_key = false;
+s_key = false;
 
 move_speed = 2;
 

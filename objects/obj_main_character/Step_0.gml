@@ -1,10 +1,10 @@
-right_key = keyboard_check(vk_right);
-left_key = keyboard_check(vk_left);
-up_key = keyboard_check(vk_up);
-down_key = keyboard_check(vk_down);
+d_key = keyboard_check(ord("D"));
+a_key = keyboard_check(ord("A"));
+w_key = keyboard_check(ord("W"));
+s_key = keyboard_check(ord("S"));
 
-xspeed = (right_key - left_key) * move_speed;
-yspeed = (down_key - up_key) * move_speed;
+xspeed = (d_key - a_key) * move_speed;
+yspeed = (s_key - w_key) * move_speed;
 
 
 //Animate
@@ -33,12 +33,12 @@ if xspeed == 0 {
 sprite_index = sprite[face];
 
 //This is collisions
-if place_meeting(x + xspeed, y, obj_Wall)
+if place_meeting(x + xspeed, y, obj_wall)
 {
     xspeed = 0;
 }
 
-if place_meeting(x, y + yspeed, obj_Wall)
+if place_meeting(x, y + yspeed, obj_wall)
 {
     yspeed = 0;
 }
@@ -50,7 +50,3 @@ y += yspeed;
 
 if yspeed > 0 && face == UP{ face = DOWN}
 if xspeed < 0 && face == DOWN{ face = UP}
-
-
-//if yspeed == 0
-//if xspeed == 0;

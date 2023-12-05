@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "spr_HouseTiles",
-    "path": "sprites/spr_HouseTiles/spr_HouseTiles.yy",
+    "name": "spr_house_tiles",
+    "path": "sprites/spr_house_tiles/spr_house_tiles.yy",
   },
   "spriteNoExport": true,
   "textureGroupId": {

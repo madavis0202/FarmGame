@@ -8,5 +8,3 @@ offset_y = y
 
 
 
-
-

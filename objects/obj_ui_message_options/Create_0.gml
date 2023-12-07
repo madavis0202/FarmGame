@@ -9,8 +9,6 @@ left_key = false;
 up_key = false;
 down_key = false;
 
-//Toggles 
-
 
 
 

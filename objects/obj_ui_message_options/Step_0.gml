@@ -12,11 +12,8 @@ else{
 
 
 //Creates message UI
-var i, ch, word, offset_x, offset_y, object_type;
+var i, ch, word, object_type;
 
-offset_x = 0;
-offset_y = 0;
-if(global.word_murder == true){ show_debug_message("true")}
 
 for (i = 1; i < 5; i++) {
     // this "inflicts_words" variable is defined on the object
@@ -26,32 +23,40 @@ for (i = 1; i < 5; i++) {
 	word = undefined;
 	object_type = undefined;
 	if (global.word_murder == true){
-		show_debug_message("murder")
 	}
 
     if (ch == "f" && !instance_exists(obj_fish) && global.word_fish == true){
         word = FISH;
 		object_type = obj_fish;
-		show_debug_message("fish?")
     } else if (ch == "m" && !instance_exists(obj_murder) && global.word_murder == true){
         word = MURDER;
 		object_type = obj_murder;
     } else if (ch == "s" && !instance_exists(obj_sexy) && global.word_sexy == true){
         word = SEXY;
 		object_type = obj_sexy;
+    } else if (ch == "h" && !instance_exists(obj_hey) && global.word_hey == true){
+        word = HEY;
+		object_type = obj_hey;
+    } else if (ch == "S" && !instance_exists(obj_sky) && global.word_sky == true){
+        word = SKY;
+		object_type = obj_sky;
     }
 	    // If word is defined, create the instance and update offsets
     if (word != undefined && object_type != undefined) {
-        with (instance_create_depth(x + offset_x, y + offset_y, depth-1, object_type)){
+        with (instance_create_depth(other.x, other.y, depth-1, object_type)){
 		follow = other.id
         if (i == 1) {
-            offset_y -= 30 // North
+            offset_y = -10 // North
+			offset_x = -10 // North
         } else if (i == 2) {
-            offset_x += 30; // East
+            offset_x = +10; // East
+			offset_y = -10 // North
         } else if (i == 3) {
-            offset_y += 30; // South
+            offset_y = +10; // South
+			offset_x = -10 // North
         } else if (i == 4) {
-            offset_y += 0; // West
+            offset_y = +10; // West
+			offset_y = -10 // North
 		}
     }
 	}
@@ -68,6 +73,7 @@ down_key = keyboard_check(vk_down);
 //Changed sprite based on input
 if (right_key && !left_key && !up_key && !down_key){
 	sprite_index = message_right
+	speaker.right_option_pressed = true;
 }
 else if (!right_key && left_key && !up_key && !down_key){
 	sprite_index = message_left

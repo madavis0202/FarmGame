@@ -6,8 +6,8 @@ if (follow != -1) {
         instance_destroy();
     } else {
         // Update the position based on the followed object's position and offsets
-        x = follow.x + offset_x;
-        y = follow.y + offset_y;
+        x = follow.x + offset_x
+        y = follow.y + offset_y
     }
 }
 

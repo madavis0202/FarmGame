@@ -1,6 +1,6 @@
 follow = -1;
-offset_x = x 
-offset_y = y
+offset_x = -1 
+offset_y = -1
 
 
 

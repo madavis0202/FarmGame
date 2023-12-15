@@ -1,4 +1,3 @@
-// obj_fish Step Event
 if (follow != -1) {
     // Check if the followed object still exists in the scene
     if (!instance_exists(follow)) {
@@ -10,6 +9,7 @@ if (follow != -1) {
         y = follow.y + offset_y
     }
 }
+
 
 
 

@@ -24,7 +24,6 @@ for (i = 1; i < 5; i++) {
 	object_type = undefined;
 	if (global.word_murder == true){
 	}
-
     if (ch == "f" && !instance_exists(obj_fish) && global.word_fish == true){
         word = FISH;
 		object_type = obj_fish;
@@ -46,17 +45,22 @@ for (i = 1; i < 5; i++) {
         with (instance_create_depth(other.x, other.y, depth-1, object_type)){
 		follow = other.id
         if (i == 1) {
-            offset_y = -10 // North
-			offset_x = -10 // North
+			//North
+            offset_y = +10
+			offset_x = 0
         } else if (i == 2) {
-            offset_x = +10; // East
-			offset_y = -10 // North
+			//East
+			offset_y = 0
+            offset_x = +10;
         } else if (i == 3) {
-            offset_y = +10; // South
-			offset_x = -10 // North
+			//South
+            offset_y = -10;
+			offset_x = 0;
         } else if (i == 4) {
-            offset_y = +10; // West
-			offset_y = -10 // North
+			//West
+			offset_y = 0;
+            offset_x = -10;
+
 		}
     }
 	}
@@ -77,16 +81,20 @@ if (right_key && !left_key && !up_key && !down_key){
 }
 else if (!right_key && left_key && !up_key && !down_key){
 	sprite_index = message_left
+	speaker.left_option_pressed = true;
 }
 else if (!right_key && !left_key && up_key && !down_key){
 	sprite_index = message_up
+	speaker.up_option_pressed = true;
 }
 else if (!right_key && !left_key && !up_key && down_key){
 	sprite_index = message_down
+	speaker.down_option_pressed = true;
 }
 if (right_key || left_key || up_key || down_key){
 //Should make the button do destroy animation after use
 }
+
 
 
 

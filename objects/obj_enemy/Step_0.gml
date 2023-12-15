@@ -1,16 +1,26 @@
-//Need to communicate right_option_pressed to other objects
 if (right_option_pressed) {
     right_option_pressed = false;
-    // Check and activate behaviors based on the button press
-    if (global.word_fish == true) {
-        show_debug_message("Fish behavior activated");
-    } else if (global.word_murder == true) {
-        show_debug_message("Murder behavior activated");
-    } else if (global.word_sexy == true) {
-        show_debug_message("Sexy behavior activated");
-    }
+    show_debug_message("Right Option Activated");
+	path_speed = 0
+	// animation is on the sprite, this isn't working
+	//image_speed = 40
+	// I would imagine he says something when you press this
+} 
+else if (left_option_pressed) {
+    left_option_pressed = false;
+    show_debug_message("Left Option Activated");
+	path_speed = 0
 }
-
+else if (up_option_pressed) {
+    up_option_pressed = false;
+    show_debug_message("Up Option Activated");
+	path_speed = 0
+}
+else if (down_option_pressed) {
+    down_option_pressed = false;
+    show_debug_message("Down Option Activated");
+	path_speed = 0
+}
 
 
 
